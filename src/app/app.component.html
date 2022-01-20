@@ -1,0 +1,13 @@
+<div>
+  <h2>Reddit Posts</h2>
+  <button (click)="GetRedditList()">Activate Reddit List</button> 
+</div>
+
+<div *ngIf="reddit && reddit.data && reddit.data.children">
+  <div *ngFor ="let child of reddit.data.children">
+    <ul>
+      <li>{{child.data?.title}}</li>
+      <li><img src="{{child.data?.thumbnail}}"/></li>
+    </ul>
+    </div>
+</div>
